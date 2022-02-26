@@ -1,13 +1,19 @@
+// import { Suspense, lazy, useEffect } from "react";
+// import { Routes, Route } from "react-router-dom";
+// import MainPage from "./_pages/MainPage/MainPage";
+// import FavoritesPage from "./_pages/FavoritesPage";
+import Header from "./components/Header";
 import "./App.css";
-import { Suspense, lazy, useEffect } from "react";
-import PublicRoute from "./routes/publicRouter";
-
-const HomePage = lazy(() =>
-  import("./_pages/HomePage" /* webpackChunkName: "home-page" */)
-);
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <Header />
+      {/* <main>
+        <h1>Welcome!</h1>
+      </main> */}
+    </>
+  );
 }
 
 export default App;

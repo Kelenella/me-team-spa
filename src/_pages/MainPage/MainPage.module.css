@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 30px auto 15px;
+}
+.navLink {
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 20px;
+  color: azure;
+}
+.navLink:hover,
+.navLink:focus {
+  outline: none;
+  color: rgb(130, 211, 211);
+}
