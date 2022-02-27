@@ -14,11 +14,6 @@ export default function CardsGallery({ cards, setCards }) {
 
   return (
     <>
-      {!modal && (
-        <Modal onClose={toggleModal}>
-          <button>Load more</button>
-        </Modal>
-      )}
       <div className={s.cardsWrapper}>
         <ul className={s.list}>
           {cards.map((card) => (
@@ -28,7 +23,12 @@ export default function CardsGallery({ cards, setCards }) {
                 <EllipsisText text={card.title} length={"35"} />
               </p>
               <img src={card.thumbnailUrl} alt="картинка" className={s.img} />
-              <button>Подробно</button>
+              <button onClick={toggleModal}>Подробно</button>
+              {!modal && (
+                <Modal onClose={toggleModal}>
+                  <button>Load more</button>
+                </Modal>
+              )}
             </li>
           ))}
         </ul>
