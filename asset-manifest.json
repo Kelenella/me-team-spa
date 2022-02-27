@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/me-team-spa/static/css/main.073c9b0a.css",
-    "main.js": "/me-team-spa/static/js/main.34c6d145.js",
+    "main.css": "/me-team-spa/static/css/main.e6d0bdb6.css",
+    "main.js": "/me-team-spa/static/js/main.dcef8aad.js",
+    "static/media/black_bg.jpg": "/me-team-spa/static/media/black_bg.d31140f4b8ebb3a9aeba.jpg",
     "index.html": "/me-team-spa/index.html",
-    "main.073c9b0a.css.map": "/me-team-spa/static/css/main.073c9b0a.css.map",
-    "main.34c6d145.js.map": "/me-team-spa/static/js/main.34c6d145.js.map"
+    "main.e6d0bdb6.css.map": "/me-team-spa/static/css/main.e6d0bdb6.css.map",
+    "main.dcef8aad.js.map": "/me-team-spa/static/js/main.dcef8aad.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.34c6d145.js"
+    "static/css/main.e6d0bdb6.css",
+    "static/js/main.dcef8aad.js"
   ]
 }
