@@ -11,7 +11,7 @@ export default function MainPage() {
 
   useEffect(() => {
     getAllCardsAPI(cards).then((cards) => {
-      setCards(() => [...cards].slice(0, 10));
+      setCards(() => [...cards].slice(0, 9));
     });
   }, [cards]);
 
