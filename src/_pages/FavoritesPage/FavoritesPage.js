@@ -4,7 +4,7 @@ export default function FavoritesPage() {
   return (
     <>
       <p>Добро пожаловать в Избранное</p>
-      <Link to="/">Вернуться на главную</Link>
+      <Link to="/me-team-spa">Вернуться на главную</Link>
     </>
   );
 }

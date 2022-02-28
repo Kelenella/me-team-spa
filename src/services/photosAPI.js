@@ -7,6 +7,19 @@ const getAllCardsAPI = async () => {
     const data = await axios
       .get(axios.defaults.baseURL)
       .then((response) => response.data);
+
+    return data;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+const getCardById = async () => {
+  try {
+    const data = await axios
+      .get(axios.defaults.baseURL)
+      .then((response) => response.data);
+
     return data;
   } catch (error) {
     console.log(error.message);

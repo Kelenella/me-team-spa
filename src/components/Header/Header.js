@@ -9,7 +9,7 @@ export default function Header() {
     <>
       <nav className={s.headerWrapper}>
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/me-team-spa" element={<MainPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
         </Routes>
       </nav>

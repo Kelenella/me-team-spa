@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import SearchBar from "../../components/SearchBar";
+import FilterBar from "../../components/FilterBar";
 import CardsGallery from "../../components/CardsData/CardsData";
 import getAllCardsAPI from "../../services/photosAPI";
 import s from "./MainPage.module.css";
@@ -11,7 +11,7 @@ export default function MainPage() {
 
   useEffect(() => {
     getAllCardsAPI(cards).then((cards) => {
-      setCards(() => [...cards].slice(0, 9));
+      setCards(() => [...cards]);
     });
   }, [cards]);
 
@@ -21,10 +21,10 @@ export default function MainPage() {
   return (
     <>
       <div className={s.wrapper}>
-        <NavLink className={s.navLink} to="/">
+        <NavLink className={s.navLink} to="/me-team-spa">
           Главная
         </NavLink>
-        <SearchBar onSubmit={handleSubmit} />
+        <FilterBar onSubmit={handleSubmit} />
         <NavLink className={s.navLink} to="/favorites">
           Избранное
         </NavLink>
