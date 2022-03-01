@@ -1,39 +1,45 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import FilterBar from "../../components/FilterBar";
-import CardsGallery from "../../components/CardsData/CardsData";
+import CardsGallery from "../../components/CardsGallery";
 import getAllCardsAPI from "../../services/photosAPI";
 import s from "./MainPage.module.css";
 
 export default function MainPage() {
-  const [searchQuery, setSearchQuery] = useState([]);
   const [cards, setCards] = useState([]);
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     getAllCardsAPI(cards).then((cards) => {
       setCards(() => [...cards]);
     });
-  }, [cards]);
+  }, []);
 
-  const handleSubmit = (searchQuery) => {
-    setSearchQuery(searchQuery);
+  const changeFilter = (e) => {
+    setFilter(e.target.value);
   };
+
+  const getVisibleCard = () => {
+    const cardFilter = filter.toLowerCase();
+
+    return cards.filter((card) =>
+      card.title.toLowerCase().includes(cardFilter)
+    );
+  };
+
+  // const addToFavorite = (filterId) => {
+  //   setCards(cards.filter((card) => card.id !== filterId));
+  // };
+
   return (
     <>
       <div className={s.wrapper}>
-        <NavLink className={s.navLink} to="/me-team-spa">
-          Главная
-        </NavLink>
-        <FilterBar onSubmit={handleSubmit} />
-        <NavLink className={s.navLink} to="/favorites">
-          Избранное
-        </NavLink>
+        <FilterBar value={filter} onChange={changeFilter} />
       </div>
 
       <CardsGallery
-        searchQuery={searchQuery}
         cards={cards}
         setCards={setCards}
+        filter={getVisibleCard()}
       />
     </>
   );

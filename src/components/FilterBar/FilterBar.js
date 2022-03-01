@@ -1,31 +1,26 @@
-import { useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import PropTypes from "prop-types";
 import "react-toastify/dist/ReactToastify.css";
 import s from "./FilterBar.module.css";
 
-export default function FilterBar(onSubmit) {
-  const [filter, setFilter] = useState("");
-
-  //   const history = useHistory();
-  const location = useLocation();
-
-  const handleChange = (e) => {
-    setFilter(e.target.value.toLowerCase());
-  };
-
+export default function FilterBar({ value, onChange }) {
   return (
     <>
       <div>
-        <label>
+        <label className={s.label}>
+          Введите название альбома
           <input
             className={s.input}
             type="text"
-            // value={filter}
-            onChange={handleChange}
+            value={value}
+            onChange={onChange}
           />
         </label>
       </div>
     </>
   );
 }
+
+FilterBar.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};

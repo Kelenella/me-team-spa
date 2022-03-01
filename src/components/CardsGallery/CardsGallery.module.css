@@ -2,7 +2,6 @@
   width: 100%;
   height: auto;
   margin: 25px auto 10px;
-  border: 2px solid tomato;
 }
 .list {
   display: grid;
@@ -21,7 +20,7 @@
   padding: 15px;
   min-width: 100px;
   height: auto;
-  border: 2px solid darkgray;
+  border: 2px solid rgb(99, 100, 100);
   background-color: rgb(57, 161, 175);
 }
 .numberAlbum {
@@ -41,4 +40,9 @@
 .img {
   min-width: 100px;
   min-height: 100px;
+}
+.filteredWrap {
+  width: 100%;
+  height: auto;
+  border: 2px solid black;
 }
